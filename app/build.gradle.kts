@@ -94,6 +94,10 @@ dependencies {
 
     implementation(libs.swipe)
 
+    implementation(libs.tflite)
+    implementation(libs.tflite.support)
+    implementation(libs.tflite.gpu)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.compose.material3)
