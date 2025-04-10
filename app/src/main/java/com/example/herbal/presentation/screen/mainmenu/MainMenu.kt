@@ -47,9 +47,6 @@ fun MainMenu(
     informationViewModel: InformationViewModel
 ) {
     val herbList by informationViewModel.informationByCategory.collectAsState()
-    val searchQuery by informationViewModel.searchQuery.collectAsState()
-    val filterState by mainMenuViewModel.filters.collectAsState()
-    val selectedCategory by mainMenuViewModel.selectedCategory.collectAsState()
 
     Column(modifier = Modifier.background(SurfaceBase)) {
         Spacer(modifier = Modifier.height(4.dp))

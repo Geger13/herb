@@ -69,7 +69,7 @@ fun BannerCard(modifier: Modifier, navController: NavHostController) {
 
 }
 @Composable
-fun InformationCard(modifier: Modifier) {
+fun InformationCard(modifier: Modifier, title: String, image: Int, desc: String) {
     Column(
         modifier = modifier
             .height(115.dp)
@@ -81,13 +81,13 @@ fun InformationCard(modifier: Modifier) {
                     .width(90.dp)
                     .height(90.dp)
                     .clip(RoundedCornerShape(16.dp)),
-                painter = painterResource(id = R.drawable.sirih),
+                painter = painterResource(id = image),
                 contentDescription = null,
                 contentScale = ContentScale.Crop
             )
             Column(modifier = Modifier.padding(10.dp)) {
                 Text(
-                    text = "Daun Sirih",
+                    text = title,
                     style = TextStyle(
                         fontSize = 18.sp,
                         lineHeight = 27.sp,
@@ -95,7 +95,7 @@ fun InformationCard(modifier: Modifier) {
                     )
                 )
                 Text(
-                    text = "Daun Sirih adalah ...",
+                    text = desc.take(80) + if (desc.length > 80) "..." else "",
                     style = TextStyle(
                         fontSize = 12.sp,
                         lineHeight = 18.sp,
@@ -185,7 +185,7 @@ fun PreviewCardComponents(){
             .fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally
 
     ){
-        InformationCard(modifier = Modifier)
+        InformationCard(modifier = Modifier, "Sirih", R.drawable.sirih, "Daun sirih adalah")
         BannerCard(
             modifier = Modifier.padding(16.dp),
             navController = navController
