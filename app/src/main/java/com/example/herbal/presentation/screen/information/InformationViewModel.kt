@@ -31,5 +31,10 @@ class InformationViewModel @Inject constructor() : ViewModel() {
             }
         }
     }
+
+    fun getHerbById(id: String): MyHerbData? {
+        return myHerbData.find { it.id == id }
+    }
 }
+
 

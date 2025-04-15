@@ -24,6 +24,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.herbal.data.datastore.MyHerbData
 import com.example.herbal.data.theme.HerbalTheme
+import com.example.herbal.presentation.HerbApp
 import com.example.herbal.presentation.screen.information.InformationViewModel
 import com.example.herbal.presentation.screen.mainmenu.HerbListContent
 import com.example.herbal.presentation.screen.mainmenu.MainMenu
@@ -37,6 +38,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Check if required permissions are granted, otherwise request them
         if (!hasRequiredPermissions()) {
             ActivityCompat.requestPermissions(
                 this,
@@ -45,27 +47,30 @@ class MainActivity : ComponentActivity() {
             )
         }
 
-
         setContent {
             HerbalTheme {
+                // Create a NavController to be used by the navigation graph
+                val navController = rememberNavController()
+
+                // Surface to provide app-wide styling
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    HerbApp()
                 }
             }
         }
     }
 
+    // Check if the required permissions are granted
     private fun hasRequiredPermissions(): Boolean {
         return getRequiredPermissions().all { permission ->
-            ContextCompat.checkSelfPermission(
-                this, permission
-            ) == PackageManager.PERMISSION_GRANTED
+            ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
         }
     }
 
+    // Get the list of permissions that your app needs
     private fun getRequiredPermissions(): Array<String> {
         val permissions = mutableListOf(
             Manifest.permission.CAMERA
@@ -76,6 +81,7 @@ class MainActivity : ComponentActivity() {
         return permissions.toTypedArray()
     }
 }
+
 
 
 

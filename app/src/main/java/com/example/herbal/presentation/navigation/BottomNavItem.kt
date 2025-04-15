@@ -13,7 +13,7 @@ var bottomNavItem = listOf(
     BottomNavItem(
         title = "Home",
         icon = R.drawable.ic_home,
-        route = "home"
+        route = "menu"
     ),
     BottomNavItem(
         title = "Tanaman",

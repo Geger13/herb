@@ -29,75 +29,72 @@ import com.example.herbal.presentation.components.BottomBarComponent
 import com.example.herbal.presentation.components.TopBarComponent
 import com.example.herbal.presentation.components.TopBarComponentHasilScan
 import com.example.herbal.presentation.components.TopBarComponentHome
+import com.example.herbal.presentation.navigation.NavGraph
 import com.example.herbal.presentation.navigation.Screen
 
-//@RequiresApi(Build.VERSION_CODES.O)
-//@Composable
-//fun HerbApp() {
-//    val navController = rememberNavController()
-//    val navBackStackEntry by navController.currentBackStackEntryAsState()
-//    val currentDestination = navBackStackEntry?.destination?.route
-//
-//    Scaffold(
-//        floatingActionButton = {
-//            if (currentDestination !in listOf(
-//                    Screen.Menu.route,
-//                    Screen.Informasi.route + "/{herbId}",
-//                    Screen.Scan.route,
-//                    Screen.Instruksi.route,
-//                )
-//            ) {
-//                Box {
-//                    FloatingActionButton(
-//                        onClick = { navController.navigate(Screen.Scan.route) },
-//                        containerColor = PrimaryBase,
-//                        shape = CircleShape,
-//                        modifier = Modifier
-//                            .size(60.dp)
-//                            .align(Alignment.Center)
-//                            .offset(y = 60.dp)
-//                    ) {
-//                        Icon(
-//                            modifier = Modifier
-//                                .width(30.dp)
-//                                .height(30.dp),
-//                            tint = ContentWhite,
-//                            painter = painterResource(id = R.drawable.ic_scan),
-//                            contentDescription = null,
-//                        )
-//                    }
-//                }
-//            }
-//        },
-//        floatingActionButtonPosition = FabPosition.Center,
-//        bottomBar = {
-//            if (currentDestination !in listOf(
-//                    Screen.Menu.route,
-//                    Screen.Informasi.route + "/{herbId}",
-//                    Screen.Scan.route,
-//                    Screen.Instruksi.route,
-//                )
-//            ) {
-//                BottomBarComponent(navController)
-//            }
-//        },
-//        topBar = {
-//            when (currentDestination) {
-//                Screen.Menu.route -> TopBarComponentHome(name = "Pengguna", navController = navController)
-//                Screen.Informasi.route + "/{informationId}" -> TopBarComponent(
-//                    title = "Detail Informasi",
-//                    navController = navController
-//                )
-//                Screen.Scan.route + "/{scanResult}" -> TopBarComponentHasilScan(
-//                    title = "Hasil Scan Tanaman",
-//                    navController = navController
-//                )
-//
-//            }
-//        }
-//    )
-//    { paddingValues ->
-//        NavGraph(navController = navController, modifier = Modifier.padding(paddingValues), context = LocalContext.current)
-//    }
-//}
+@RequiresApi(Build.VERSION_CODES.O)
+@Composable
+fun HerbApp() {
+    val navController = rememberNavController()
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navBackStackEntry?.destination?.route
+
+    Scaffold(
+        floatingActionButton = {
+            if (currentDestination !in listOf(
+                    Screen.Informasi.route + "/{herbId}",
+                    Screen.Scan.route,
+                    Screen.Instruksi.route,
+                )
+            ) {
+                Box {
+                    FloatingActionButton(
+                        onClick = { navController.navigate(Screen.Scan.route) },
+                        containerColor = PrimaryBase,
+                        shape = CircleShape,
+                        modifier = Modifier
+                            .size(60.dp)
+                            .align(Alignment.Center)
+                            .offset(y = 60.dp)
+                    ) {
+                        Icon(
+                            modifier = Modifier
+                                .width(30.dp)
+                                .height(30.dp),
+                            tint = ContentWhite,
+                            painter = painterResource(id = R.drawable.ic_scan),
+                            contentDescription = null,
+                        )
+                    }
+                }
+            }
+        },
+        floatingActionButtonPosition = FabPosition.Center,
+        bottomBar = {
+            if (currentDestination !in listOf(
+                    Screen.Informasi.route + "/{herbId}",
+                    Screen.Scan.route,
+                    Screen.Instruksi.route,
+                )
+            ) {
+                BottomBarComponent(navController)
+            }
+        },
+        topBar = {
+            when (currentDestination) {
+                Screen.Menu.route -> TopBarComponentHome(name = "Pengguna", navController = navController)
+                Screen.Informasi.route + "/{informationId}" -> TopBarComponent(
+                    title = "Detail Informasi",
+                    navController = navController
+                )
+                Screen.Scan.route + "/{scanResult}" -> TopBarComponentHasilScan(
+                    title = "Hasil Scan Tanaman",
+                    navController = navController
+                )
+            }
+        }
+    ) { paddingValues ->
+        NavGraph(navController = navController, modifier = Modifier.padding(paddingValues))
+    }
+}
 

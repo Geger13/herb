@@ -17,39 +17,34 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.herbal.data.datastore.MyHerbData
+import com.example.herbal.data.datastore.myHerbData
 import com.example.herbal.data.theme.SurfaceBase
-import com.example.herbal.presentation.components.BannerCard
 import com.example.herbal.presentation.components.InformationCard
-import com.example.herbal.presentation.components.MenuCard
 import com.example.herbal.presentation.navigation.Screen
 import com.example.herbal.presentation.screen.information.InformationViewModel
-import com.example.herbal.presentation.screen.mainmenu.HerbListContent
-import com.example.herbal.presentation.screen.mainmenu.InformationHeader
-import com.example.herbal.presentation.screen.mainmenu.MainMenu
-import com.example.herbal.presentation.screen.mainmenu.MainMenuViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 @Composable
 fun ListHerb(
     navController: NavHostController,
-    informationViewModel: InformationViewModel
+    informationViewModel: ListHerbViewModel
 ) {
-    val herbList by informationViewModel.informationByCategory.collectAsState()
+    // Collect the entire herb list from the ViewModel
+    val herbList by informationViewModel.herbList.collectAsState()
 
     Column(modifier = Modifier.background(SurfaceBase)) {
         Spacer(modifier = Modifier.height(4.dp))
 
         Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp)) {
-
-
+            // You can remove any category-related UI elements here
             Spacer(modifier = Modifier.height(16.dp))
 
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            ListHerbComp(herbList, navController)
+            ListHerbComp(herbList, navController) // Pass all herbs to the list component
         }
     }
 }
+
 @Composable
 fun ListHerbComp (
     herbList: List<MyHerbData>,
@@ -74,8 +69,14 @@ fun ListHerbComp (
 @Composable
 fun PreviewListHerb() {
     val navController = rememberNavController()
-    val infoViewModel = remember { InformationViewModel() }
 
-    ListHerb(navController = navController,
-        informationViewModel = infoViewModel)
+    // Create a mock ViewModel for the preview
+    val mockViewModel = object : ListHerbViewModel() {
+        override val herbList: StateFlow<List<MyHerbData>> = MutableStateFlow(myHerbData)
+    }
+
+    ListHerb(
+        navController = navController,
+        informationViewModel = mockViewModel // Use the mock ViewModel here
+    )
 }

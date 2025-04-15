@@ -48,10 +48,11 @@ fun MainMenu(
 ) {
     val herbList by informationViewModel.informationByCategory.collectAsState()
 
-    Column(modifier = Modifier.background(SurfaceBase)) {
+    Column(modifier = Modifier.background(Color.White)) {
         Spacer(modifier = Modifier.height(4.dp))
 
         Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp)) {
+            Spacer(modifier = Modifier.height(100.dp))
             BannerCard(modifier = Modifier, navController)
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -95,14 +96,14 @@ fun InformationHeader(navController: NavHostController) {
         }
         Text(
             modifier = Modifier.clickable {
-                navController.navigate(Screen.Informasi.route)
-            },
+                navController.navigate(Screen.Tanaman.route)
+            }.padding(start = 15.dp),
             text = "Lihat semua",
             color = SecondaryBase,
             style = TextStyle(
                 fontSize = 14.sp,
                 fontWeight = FontWeight.SemiBold,
-            )
+            ),
         )
     }
 }

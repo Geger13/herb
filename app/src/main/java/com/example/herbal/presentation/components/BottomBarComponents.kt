@@ -47,7 +47,7 @@ fun BottomBarComponent(navController: NavHostController) {
     BottomAppBar(
         modifier = Modifier
             .height(70.dp),
-        containerColor = Color.White,
+        containerColor = Color(0xFFE7F8E3),
         content = {
             Row(
                 verticalAlignment = Alignment.CenterVertically,

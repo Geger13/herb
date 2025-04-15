@@ -29,7 +29,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "2",
-        name = "Daun Sirih",
+        name = "Daun Anu",
         sasak_name = "Daun Lekoq",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -45,7 +45,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "3",
-        name = "Daun Sirih",
+        name = "Daun Sih",
         sasak_name = "Daun Lekoq",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +

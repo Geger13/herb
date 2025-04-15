@@ -2,26 +2,20 @@ package com.example.herbal.presentation.screen.listherb
 
 import androidx.lifecycle.ViewModel
 import com.example.herbal.data.datastore.FilterData
+import com.example.herbal.data.datastore.MyHerbData
 import com.example.herbal.data.datastore.categoryList
+import com.example.herbal.data.datastore.myHerbData
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
+import javax.inject.Inject
 
-class ListHerbViewModel : ViewModel() {
-    private val _filter = MutableStateFlow(categoryList)
-    val filters: StateFlow<List<FilterData>> = _filter
+@HiltViewModel
+open class ListHerbViewModel @Inject constructor() : ViewModel() {
+    // Provide the entire list of herbs without filtering by category
+    private val _herbList = MutableStateFlow(myHerbData) // List of all herbs
+    open val herbList: StateFlow<List<MyHerbData>> = _herbList
 
-    private val _selectedCategory = MutableStateFlow("")
-    val selectedCategory: StateFlow<String> = _selectedCategory
-    fun toggleFilter(index: Int) {
-        _filter.update { currentFilter ->
-            currentFilter.mapIndexed { i, filter ->
-                filter.copy(isActive = i == index).also {
-                    if (i == index) {
-                        _selectedCategory.update { filter.category }
-                    }
-                }
-            }
-        }
-    }
+    // Optionally, you could add logic for managing any other states
 }
