@@ -30,17 +30,16 @@ fun ListHerb(
     navController: NavHostController,
     informationViewModel: ListHerbViewModel
 ) {
-    // Collect the entire herb list from the ViewModel
     val herbList by informationViewModel.herbList.collectAsState()
 
     Column(modifier = Modifier.background(SurfaceBase)) {
         Spacer(modifier = Modifier.height(4.dp))
 
         Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 4.dp)) {
-            // You can remove any category-related UI elements here
+
             Spacer(modifier = Modifier.height(16.dp))
 
-            ListHerbComp(herbList, navController) // Pass all herbs to the list component
+            ListHerbComp(herbList, navController)
         }
     }
 }
@@ -70,7 +69,6 @@ fun ListHerbComp (
 fun PreviewListHerb() {
     val navController = rememberNavController()
 
-    // Create a mock ViewModel for the preview
     val mockViewModel = object : ListHerbViewModel() {
         override val herbList: StateFlow<List<MyHerbData>> = MutableStateFlow(myHerbData)
     }
