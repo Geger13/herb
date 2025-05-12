@@ -1,6 +1,5 @@
 package com.example.herbal.presentation.navigation
 
-import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
@@ -11,7 +10,6 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.herbal.data.datastore.MyHerbData
 import com.example.herbal.presentation.screen.information.HerbInformation
 import com.example.herbal.presentation.screen.information.InformationViewModel
 import com.example.herbal.presentation.screen.instruction.Instruction
@@ -19,6 +17,8 @@ import com.example.herbal.presentation.screen.listherb.ListHerb
 import com.example.herbal.presentation.screen.listherb.ListHerbViewModel
 import com.example.herbal.presentation.screen.mainmenu.MainMenu
 import com.example.herbal.presentation.screen.mainmenu.MainMenuViewModel
+import com.example.herbal.presentation.screen.scan.ScanTanamanScreen
+import com.example.herbal.presentation.screen.scan.ScanViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -65,14 +65,14 @@ fun NavGraph(navController: NavHostController, modifier: Modifier) {
         }
 
         // Jika kamu ingin mengaktifkan scan kembali nanti:
-        // composable(route = Screen.Scan.route) {
-        //     val scanViewModel: ScanViewModel = hiltViewModel()
-        //     ScanTanamanScreen(
-        //         modifier = modifier,
-        //         navController = navController,
-        //         scanViewModel = scanViewModel
-        //     )
-        // }
+         composable(route = Screen.Scan.route) {
+             val scanViewModel: ScanViewModel = hiltViewModel()
+             ScanTanamanScreen(
+                 modifier = modifier,
+                 navController = navController,
+                 viewModel = scanViewModel
+             )
+         }
     }
 }
 

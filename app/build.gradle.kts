@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.androidx.material3.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.storage)
+    implementation(libs.androidx.room.external.antlr)
 
     kapt(libs.hilt.android.compiler)
 

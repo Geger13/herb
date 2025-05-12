@@ -11,12 +11,12 @@ data class BottomNavItem (
 
 var bottomNavItem = listOf(
     BottomNavItem(
-        title = "Home",
+        title = "",
         icon = R.drawable.ic_home,
         route = "menu"
     ),
     BottomNavItem(
-        title = "Tanaman",
+        title = "",
         icon = R.drawable.ic_plant,
         route = "tanaman"
     )

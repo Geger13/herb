@@ -135,7 +135,7 @@ fun MenuCard(modifier: Modifier, title: String, image: Int) {
                     lineHeight = 27.sp,
                     fontWeight = FontWeight.Bold
                 ),
-                modifier = Modifier.padding(start = 12.dp) // Jarak antara gambar dan teks
+                modifier = Modifier.padding(start = 12.dp)
             )
         }
         Spacer(modifier = Modifier.height(10.dp))
