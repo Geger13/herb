@@ -64,7 +64,6 @@ fun NavGraph(navController: NavHostController, modifier: Modifier) {
             )
         }
 
-        // Jika kamu ingin mengaktifkan scan kembali nanti:
          composable(route = Screen.Scan.route) {
              val scanViewModel: ScanViewModel = hiltViewModel()
              ScanTanamanScreen(

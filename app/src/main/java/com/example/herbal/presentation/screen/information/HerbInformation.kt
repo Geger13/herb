@@ -21,6 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.herbal.R
 import com.example.herbal.data.datastore.MyHerbData
 import com.example.herbal.data.datastore.myHerbData
 
@@ -31,7 +32,7 @@ fun HerbInformation(modifier: Modifier = Modifier, herbData: MyHerbData) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .verticalScroll(scrollState) // Tambahkan ini agar bisa discroll
+            .verticalScroll(scrollState) // Make the screen scrollable
             .padding(16.dp)
     ) {
         Image(
@@ -84,6 +85,7 @@ fun HerbInformation(modifier: Modifier = Modifier, herbData: MyHerbData) {
 }
 
 
+
 @Composable
 fun MyHerbScreen(herbId: String) {
     val herb = myHerbData.find { it.id == herbId } // Cari data berdasarkan ID
@@ -99,6 +101,13 @@ fun MyHerbScreen(herbId: String) {
 @Composable
 @Preview(showBackground = true)
 fun HerbInformationPreview() {
-    MyHerbScreen("1")
-
+    val mockHerb = MyHerbData(
+        id = "1",
+        name = "Herb Name",
+        sasak_name = "Nama Sasak",
+        desc = "Herb description and benefits.",
+        image = R.drawable.sirih
+    )
+    HerbInformation(herbData = mockHerb)
 }
+

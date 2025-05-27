@@ -13,7 +13,7 @@ data class MyHerbData(
 val myHerbData = listOf(
     MyHerbData(
         id = "1",
-        name = "Daun Sirih",
+        name = "Daun Bawang Merah",
         sasak_name = "Daun Lekoq",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -29,7 +29,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "2",
-        name = "Daun Jambu",
+        name = "Daun Betadin",
         sasak_name = "Daun Nyambuq",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -45,7 +45,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "3",
-        name = "Daun Bawang Merah",
+        name = "Daun Buah Ajaib",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -61,7 +61,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "4",
-        name = "Daun Buah Ajaib",
+        name = "Daun Ginseng Jawa",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -77,7 +77,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "5",
-        name = "Daun Ketepeng Cina",
+        name = "Daun Jambu",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -109,7 +109,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "7",
-        name = "Daun Ginseng Jawa",
+        name = "Daun Ketepeng Cina",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -125,7 +125,7 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "8",
-        name = "Daun Pukul Empat",
+        name = "Daun Kumis Kucing",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -158,7 +158,7 @@ val myHerbData = listOf(
     MyHerbData(
         id = "10",
         name = "Daun Meniran",
-        sasak_name = "Daun Bawang",
+        sasak_name = "Daun Meniran",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
                 "Manfaat:\n" +
@@ -174,7 +174,7 @@ val myHerbData = listOf(
     MyHerbData(
         id = "11",
         name = "Daun Mimba",
-        sasak_name = "Daun Bawang",
+        sasak_name = "Daun Mimba",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
                 "Manfaat:\n" +
@@ -189,54 +189,6 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "12",
-        name = "Daun Kumis Kucing",
-        sasak_name = "Daun Bawang",
-        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
-                "\n" +
-                "Manfaat:\n" +
-                "\n" +
-                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
-                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
-                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
-                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
-                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
-                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
-        image = R.drawable.jarak
-    ),
-    MyHerbData(
-        id = "13",
-        name = "Daun Sage",
-        sasak_name = "Daun Bawang",
-        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
-                "\n" +
-                "Manfaat:\n" +
-                "\n" +
-                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
-                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
-                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
-                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
-                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
-                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
-        image = R.drawable.jarak
-    ),
-    MyHerbData(
-        id = "14",
-        name = "Daun Sembung",
-        sasak_name = "Daun Bawang",
-        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
-                "\n" +
-                "Manfaat:\n" +
-                "\n" +
-                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
-                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
-                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
-                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
-                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
-                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
-        image = R.drawable.jarak
-    ),
-    MyHerbData(
-        id = "15",
         name = "Daun Nangka",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
@@ -252,7 +204,7 @@ val myHerbData = listOf(
         image = R.drawable.jarak
     ),
     MyHerbData(
-        id = "16",
+        id = "13",
         name = "Daun Patah Tulang",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
@@ -268,7 +220,7 @@ val myHerbData = listOf(
         image = R.drawable.jarak
     ),
     MyHerbData(
-        id = "17",
+        id = "14",
         name = "Daun Pepaya",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
@@ -284,8 +236,56 @@ val myHerbData = listOf(
         image = R.drawable.jarak
     ),
     MyHerbData(
+        id = "15",
+        name = "Daun Pukul Empat",
+        sasak_name = "Daun Bawang",
+        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
+                "\n" +
+                "Manfaat:\n" +
+                "\n" +
+                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
+                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
+                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
+                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
+                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
+                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
+        image = R.drawable.jarak
+    ),
+    MyHerbData(
+        id = "16",
+        name = "Daun Sage",
+        sasak_name = "Daun Bawang",
+        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
+                "\n" +
+                "Manfaat:\n" +
+                "\n" +
+                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
+                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
+                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
+                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
+                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
+                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
+        image = R.drawable.jarak
+    ),
+    MyHerbData(
+        id = "17",
+        name = "Daun Sembung",
+        sasak_name = "Daun Bawang",
+        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
+                "\n" +
+                "Manfaat:\n" +
+                "\n" +
+                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
+                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
+                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
+                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
+                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
+                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
+        image = R.drawable.jarak
+    ),
+    MyHerbData(
         id = "18",
-        name = "Katumpangan",
+        name = "Daun Sirih",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +
@@ -301,38 +301,6 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "19",
-        name = "Daun Tin Ara",
-        sasak_name = "Daun Bawang",
-        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
-                "\n" +
-                "Manfaat:\n" +
-                "\n" +
-                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
-                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
-                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
-                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
-                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
-                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
-        image = R.drawable.jarak
-    ),
-    MyHerbData(
-        id = "20",
-        name = "Daun Ubi Jalar",
-        sasak_name = "Daun Bawang",
-        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
-                "\n" +
-                "Manfaat:\n" +
-                "\n" +
-                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
-                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
-                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
-                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
-                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
-                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
-        image = R.drawable.jarak
-    ),
-    MyHerbData(
-        id = "21",
         name = "Daun Sirsak",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
@@ -348,8 +316,40 @@ val myHerbData = listOf(
         image = R.drawable.jarak
     ),
     MyHerbData(
+        id = "20",
+        name = "Daun Tin Ara",
+        sasak_name = "Daun Bawang",
+        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
+                "\n" +
+                "Manfaat:\n" +
+                "\n" +
+                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
+                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
+                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
+                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
+                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
+                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
+        image = R.drawable.jarak
+    ),
+    MyHerbData(
+        id = "21",
+        name = "Daun Ubi Jalar",
+        sasak_name = "Daun Bawang",
+        desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
+                "\n" +
+                "Manfaat:\n" +
+                "\n" +
+                "Antiseptik alami – Membantu mengatasi infeksi dan mempercepat penyembuhan luka.\n" +
+                "Menjaga kesehatan mulut – Digunakan untuk berkumur guna mengatasi bau mulut dan sariawan.\n" +
+                "Mengurangi peradangan – Efektif dalam meredakan jerawat, iritasi kulit, dan gangguan pernapasan.\n" +
+                "Menstabilkan kadar gula darah – Dapat membantu penderita diabetes dengan mengontrol gula darah.\n" +
+                "Melancarkan pencernaan – Membantu mengatasi gangguan pencernaan seperti perut kembung dan sembelit.\n" +
+                "Daun sirih banyak dimanfaatkan dalam bentuk rebusan, ekstrak minyak, atau dikunyah langsung.",
+        image = R.drawable.jarak
+    ),
+    MyHerbData(
         id = "22",
-        name = "Daun Betadin",
+        name = "Katumpangan",
         sasak_name = "Daun Bawang",
         desc = "Daun sirih (Piper betle) adalah daun dari tanaman merambat yang banyak digunakan dalam pengobatan tradisional. Daun ini memiliki aroma khas dan mengandung senyawa seperti flavonoid, tanin, dan minyak atsiri yang bermanfaat bagi kesehatan.\n" +
                 "\n" +

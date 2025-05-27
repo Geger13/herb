@@ -59,6 +59,9 @@ kapt {
 
 dependencies {
 
+    implementation (libs.google.accompanist.permissions)
+
+
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.android)
     implementation(libs.androidx.material3.android)
