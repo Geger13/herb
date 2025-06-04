@@ -14,12 +14,14 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavGraph
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.herbal.R
@@ -27,10 +29,10 @@ import com.example.herbal.data.theme.ContentWhite
 import com.example.herbal.data.theme.PrimaryBase
 import com.example.herbal.presentation.components.BottomBarComponent
 import com.example.herbal.presentation.components.TopBarComponent
-import com.example.herbal.presentation.components.TopBarComponentHasilScan
 import com.example.herbal.presentation.components.TopBarComponentHome
 import com.example.herbal.presentation.navigation.NavGraph
 import com.example.herbal.presentation.navigation.Screen
+import com.example.herbal.presentation.screen.mainmenu.MainMenuViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -39,14 +41,22 @@ fun HerbApp() {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination?.route
 
+    val homeViewModel: MainMenuViewModel = hiltViewModel()
+    val searchQuery by homeViewModel.searchQuery.collectAsState()
+    val keyboardController = LocalSoftwareKeyboardController.current
+
+    val tanamanRouteTemplate = Screen.Tanaman.route + "?query={query}"
+    val informasiRouteTemplate = Screen.Informasi.route + "/{herbId}"
+
+    val showBottomBarAndFab = currentDestination !in listOf(
+        informasiRouteTemplate,
+        Screen.Scan.route,
+        Screen.Instruksi.route
+    )
+
     Scaffold(
         floatingActionButton = {
-            if (currentDestination !in listOf(
-                    Screen.Informasi.route + "/{herbId}",
-                    Screen.Scan.route,
-                    Screen.Instruksi.route,
-                )
-            ) {
+            if (showBottomBarAndFab) {
                 Box {
                     FloatingActionButton(
                         onClick = { navController.navigate(Screen.Scan.route) },
@@ -71,25 +81,35 @@ fun HerbApp() {
         },
         floatingActionButtonPosition = FabPosition.Center,
         bottomBar = {
-            if (currentDestination !in listOf(
-                    Screen.Informasi.route + "/{herbId}",
-                    Screen.Scan.route,
-                    Screen.Instruksi.route,
-                )
-            ) {
+            if (showBottomBarAndFab) {
                 BottomBarComponent(navController)
             }
         },
         topBar = {
             when (currentDestination) {
-                Screen.Menu.route -> TopBarComponentHome(name = "Pengguna", navController = navController)
-                Screen.Informasi.route + "/{informationId}" -> TopBarComponent(
-                    title = "Detail Informasi",
+                Screen.Menu.route -> TopBarComponentHome(
+                    searchQuery = searchQuery,
+                    onSearchQueryChange = { homeViewModel.onSearchQueryChange(it) },
+                    onSearchTriggered = {
+                        keyboardController?.hide()
+                        navController.navigate(Screen.Tanaman.createRoute(searchQuery))
+                    },
                     navController = navController
                 )
-                Screen.Scan.route + "/{scanResult}" -> TopBarComponentHasilScan(
-                    title = "Hasil Scan Tanaman",
-                    navController = navController
+                tanamanRouteTemplate -> TopBarComponent(
+                    title = "List Tanaman",
+                    navController = navController,
+                    showBackButton = true
+                )
+                informasiRouteTemplate -> TopBarComponent(
+                    title = "Detail Tanaman",
+                    navController = navController,
+                    showBackButton = true
+                )
+                Screen.Instruksi.route -> TopBarComponent(
+                    title = "Instruksi",
+                    navController = navController,
+                    showBackButton = true
                 )
             }
         }
@@ -97,4 +117,3 @@ fun HerbApp() {
         NavGraph(navController = navController, modifier = Modifier.padding(paddingValues))
     }
 }
-

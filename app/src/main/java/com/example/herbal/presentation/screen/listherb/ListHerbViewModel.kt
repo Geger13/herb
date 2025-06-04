@@ -1,21 +1,36 @@
 package com.example.herbal.presentation.screen.listherb
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.herbal.data.datastore.FilterData
+import androidx.lifecycle.viewModelScope
 import com.example.herbal.data.datastore.MyHerbData
-import com.example.herbal.data.datastore.categoryList
 import com.example.herbal.data.datastore.myHerbData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
-open class ListHerbViewModel @Inject constructor() : ViewModel() {
-    // Provide the entire list of herbs without filtering by category
-    private val _herbList = MutableStateFlow(myHerbData) // List of all herbs
-    open val herbList: StateFlow<List<MyHerbData>> = _herbList
+class ListHerbViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle
+) : ViewModel() {
 
-    // Optionally, you could add logic for managing any other states
+    private val _allPlants = MutableStateFlow(myHerbData)
+    val query: StateFlow<String> = savedStateHandle.getStateFlow("query", "")
+
+    val herbList: StateFlow<List<MyHerbData>> = query
+        .combine(_allPlants) { q, plants ->
+            if (q.isBlank()) {
+                plants
+            } else {
+                plants.filter { it.name.contains(q, ignoreCase = true) }
+            }
+        }.stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = myHerbData
+        )
 }

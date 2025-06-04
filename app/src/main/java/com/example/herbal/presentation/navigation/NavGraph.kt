@@ -14,9 +14,7 @@ import com.example.herbal.presentation.screen.information.HerbInformation
 import com.example.herbal.presentation.screen.information.InformationViewModel
 import com.example.herbal.presentation.screen.instruction.Instruction
 import com.example.herbal.presentation.screen.listherb.ListHerb
-import com.example.herbal.presentation.screen.listherb.ListHerbViewModel
 import com.example.herbal.presentation.screen.mainmenu.MainMenu
-import com.example.herbal.presentation.screen.mainmenu.MainMenuViewModel
 import com.example.herbal.presentation.screen.scan.ScanTanamanScreen
 import com.example.herbal.presentation.screen.scan.ScanViewModel
 
@@ -24,23 +22,27 @@ import com.example.herbal.presentation.screen.scan.ScanViewModel
 @Composable
 fun NavGraph(navController: NavHostController, modifier: Modifier) {
 
-    NavHost(navController = navController, startDestination = Screen.Menu.route) {
+    NavHost(
+        navController = navController,
+        startDestination = Screen.Menu.route,
+        modifier = modifier
+    ) {
 
         composable(route = Screen.Menu.route) {
-            val informationViewModel: InformationViewModel = hiltViewModel()
             MainMenu(
-                modifier = modifier,
                 navController = navController,
-                mainMenuViewModel = MainMenuViewModel(),
-                informationViewModel,
             )
         }
 
-        composable(route = Screen.Tanaman.route) {
-            val listHerbViewModel: ListHerbViewModel = hiltViewModel()
+        composable(
+            route = Screen.Tanaman.route + "?query={query}",
+            arguments = listOf(navArgument("query") {
+                type = NavType.StringType
+                defaultValue = ""
+            })
+        ) {
             ListHerb(
-                navController = navController,
-                listHerbViewModel
+                navController = navController
             )
         }
 
@@ -53,7 +55,9 @@ fun NavGraph(navController: NavHostController, modifier: Modifier) {
             val herbData = informationViewModel.getHerbById(herbId)
 
             herbData?.let {
-                HerbInformation(modifier = modifier, herbData = it)
+                HerbInformation(
+                    herbData = it
+                )
             }
         }
 
@@ -64,14 +68,12 @@ fun NavGraph(navController: NavHostController, modifier: Modifier) {
             )
         }
 
-         composable(route = Screen.Scan.route) {
-             val scanViewModel: ScanViewModel = hiltViewModel()
-             ScanTanamanScreen(
-                 modifier = modifier,
-                 navController = navController,
-                 viewModel = scanViewModel
-             )
-         }
+        composable(route = Screen.Scan.route) {
+            val scanViewModel: ScanViewModel = hiltViewModel()
+            ScanTanamanScreen(
+                navController = navController,
+                viewModel = scanViewModel
+            )
+        }
     }
 }
-

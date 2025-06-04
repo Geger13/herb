@@ -70,11 +70,11 @@ fun HerbInformation(modifier: Modifier = Modifier, herbData: MyHerbData) {
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = "Keterangan dan manfaat",
+            text = "Keterangan Dan Manfaat",
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
-            modifier = Modifier.padding(bottom = 8.dp, start = 70.dp)
+            modifier = Modifier.padding(bottom = 8.dp, start = 50.dp)
         )
         Text(
             text = herbData.desc,

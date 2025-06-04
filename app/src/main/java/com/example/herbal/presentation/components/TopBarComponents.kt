@@ -1,35 +1,38 @@
 package com.example.herbal.presentation.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,36 +47,26 @@ import com.example.herbal.presentation.navigation.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBarComponent(title: String, navController: NavHostController) {
-    TopAppBar(
-        colors = TopAppBarDefaults.topAppBarColors(ContentWhite),
-        title = {
-            Text(
-                text = title,
-                style = TextStyle(
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight(500),
-                    color = ContentDark,
-                    textAlign = TextAlign.Center,
-                ),
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-
-            )
-
-        },
+fun TopBarComponent(
+    title: String,
+    navController: NavHostController,
+    showBackButton: Boolean = false
+) {
+    CenterAlignedTopAppBar(
+        title = { Text(text = title) },
         navigationIcon = {
-            Icon(
-                modifier = Modifier.clickable {
-                    navController.popBackStack()
-                },
-                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                contentDescription = "Back"
-            )
+            if (showBackButton && navController.previousBackStackEntry != null) {
+                IconButton(onClick = { navController.navigateUp() }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Kembali"
+                    )
+                }
+            }
         },
-        modifier = Modifier
-            .background(ContentWhite)
-
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = Color.White
+        )
     )
 }
 
@@ -139,66 +132,81 @@ fun TopBarComponentBack( navController: NavHostController) {
     )
 }
 
-
 @Composable
-fun TopBarComponentSearch(navController: NavHostController, searchText : String, screen : String) {
-    Box(
-        modifier = Modifier
-            .background(ContentWhite)
-            .padding(start = 16.dp, top = 16.dp, bottom = 16.dp, end = 16.dp)
-    ) {
+fun TopBarComponentHome(
+    searchQuery: String,
+    onSearchQueryChange: (String) -> Unit,
+    onSearchTriggered: () -> Unit,
+    navController: NavHostController
+) {
+    Column(modifier = Modifier.background(ContentWhite)) {
         Row(
             modifier = Modifier
-                .clickable { navController.navigate(screen) }
-                .height(45.dp)
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(10.dp))
-                .background(SurfaceBase),
+                .padding(16.dp)
+                .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                tint = SecondaryBase,
+            TextField(
+                value = searchQuery,
+                onValueChange = onSearchQueryChange,
                 modifier = Modifier
-                    .padding(start = 8.dp, end = 8.dp)
-                    .width(24.dp)
-                    .height(24.dp),
-                painter = painterResource(id = R.drawable.ic_search),
-                contentDescription = null
-            )
-            Text(
-                text = searchText,
-                style = TextStyle(
+                    .fillMaxWidth()
+                    .height(50.dp),
+                placeholder = {
+                    Text(
+                        text = "Cari Tanaman...",
+                        style = TextStyle(
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight(400),
+                        )
+                    )
+                },
+                textStyle = TextStyle(
                     fontSize = 16.sp,
                     fontWeight = FontWeight(400),
+                ),
+                leadingIcon = {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_search),
+                        modifier = Modifier
+                            .padding(start = 8.dp, end = 8.dp)
+                            .width(24.dp)
+                            .height(24.dp),
+                        contentDescription = "Ikon Pencarian",
+                        tint = SecondaryBase
+                    )
+                },
+                trailingIcon = {
+                    if (searchQuery.isNotEmpty()) {
+                        IconButton(onClick = { onSearchQueryChange("") }) {
+                            Icon(
+                                Icons.Default.Clear,
+                                contentDescription = "Hapus Teks",
+                                tint = SecondaryBase
+                            )
+                        }
+                    }
+                },
+                singleLine = true,
+                shape = RoundedCornerShape(10.dp),
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = SurfaceBase,
+                    unfocusedContainerColor = SurfaceBase,
+                    disabledContainerColor = SurfaceBase,
+                    focusedIndicatorColor = Color.Transparent,
+                    unfocusedIndicatorColor = Color.Transparent,
+                    disabledIndicatorColor = Color.Transparent,
+                    cursorColor = MaterialTheme.colorScheme.primary
+                ),
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    imeAction = ImeAction.Search
+                ),
+                keyboardActions = KeyboardActions(
+                    onSearch = { onSearchTriggered() }
                 )
             )
         }
     }
-}
-
-
-
-
-@Composable
-fun TopBarComponentHome(name : String,navController: NavHostController) {
-    Column(modifier = Modifier.background(ContentWhite)) {
-        Row(
-            modifier = Modifier
-                .padding(start = 16.dp, top = 16.dp, end = 16.dp)
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-
-        ) {
-
-
-            SearchBarTanaman(modifier = Modifier
-                .padding(16.dp)
-                .clickable { navController.navigate(Screen.Tanaman.route) })
-
-        }
-    }
-
 }
     @Preview(showSystemUi = true)
     @Composable
