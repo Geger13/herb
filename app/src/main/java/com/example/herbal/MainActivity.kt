@@ -1,34 +1,27 @@
 package com.example.herbal
 
-import android.R
 import android.Manifest
+import android.R
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.example.herbal.data.datastore.MyHerbData
 import com.example.herbal.data.theme.HerbalTheme
 import com.example.herbal.presentation.HerbApp
-import com.example.herbal.presentation.screen.information.InformationViewModel
 import com.example.herbal.presentation.screen.mainmenu.HerbListContent
-import com.example.herbal.presentation.screen.mainmenu.MainMenu
-import com.example.herbal.presentation.screen.mainmenu.MainMenuViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,9 +29,9 @@ class MainActivity : ComponentActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
 
-        // Check if required permissions are granted, otherwise request them
         if (!hasRequiredPermissions()) {
             ActivityCompat.requestPermissions(
                 this,
@@ -49,10 +42,8 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             HerbalTheme {
-                // Create a NavController to be used by the navigation graph
                 val navController = rememberNavController()
 
-                // Surface to provide app-wide styling
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -63,14 +54,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    // Check if the required permissions are granted
     private fun hasRequiredPermissions(): Boolean {
         return getRequiredPermissions().all { permission ->
             ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
         }
     }
 
-    // Get the list of permissions that your app needs
     private fun getRequiredPermissions(): Array<String> {
         val permissions = mutableListOf(
             Manifest.permission.CAMERA
