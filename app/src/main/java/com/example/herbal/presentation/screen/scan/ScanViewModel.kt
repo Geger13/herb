@@ -61,6 +61,8 @@ class ScanViewModel(
         }
 
         viewModelScope.launch {
+            val startTime = System.currentTimeMillis()
+
             try {
                 _scanState.value = ScanState.LoadingIdentifyPlantName
 
@@ -75,6 +77,9 @@ class ScanViewModel(
                 val output = Array(1) { FloatArray(25) }
 
                 currentInterpreter.run(inputBuffer, output)
+
+                val detectionTime = System.currentTimeMillis() - startTime
+                Log.d("ScanPerformance", "Waktu yang dibutuhkan untuk deteksi: ${detectionTime} ms")
 
                 Log.d("ScanDebug", "Model output: ${output[0].contentToString()}")
 

@@ -73,6 +73,44 @@ val myHerbData = listOf(
     ),
     MyHerbData(
         id = "4",
+        name = "Daun Bugenvil Putih",
+        sasak_name = "Daun Bugenvil Putih",
+        desc = "Daun dari tanaman Bugenvil (*Bougainvillea glabra*), tanaman hias populer yang dikenal dengan seludang bunga berwarna cerah. Daunnya sendiri berwarna hijau, berbentuk oval atau sedikit lonjong, dan memiliki tekstur yang agak kaku.\n\n" +
+                "Manfaat & Kandungan:\n" +
+                "- 🤧 **Meredakan Batuk & Melegakan Tenggorokan** – Secara tradisional, air rebusan daun bugenvil digunakan sebagai ekspektoran untuk membantu mengencerkan dan mengeluarkan dahak.\n" +
+                "- 🩹 **Mempercepat Penyembuhan Luka** – Ekstrak daunnya memiliki sifat antiseptik dan anti-inflamasi yang dapat membantu membersihkan luka dari bakteri dan mengurangi peradangan.\n" +
+                "- 🩸 **Menjaga Keseimbangan Gula Darah** – Beberapa penelitian awal pada hewan menunjukkan bahwa ekstrak daun bugenvil berpotensi membantu menurunkan kadar gula darah karena kandungan senyawa seperti pinitol.\n" +
+                "- 🌿 **Kaya Antioksidan** – Mengandung senyawa seperti flavonoid dan tanin yang berfungsi sebagai antioksidan untuk melawan radikal bebas dalam tubuh.\n\n" +
+                "Penggunaan:\n" +
+                "Cara paling umum adalah dengan membuat rebusan (teh herbal). Ambil sekitar 10-15 lembar daun segar yang sudah dicuci bersih, rebus dengan 2-3 gelas air hingga airnya menyusut menjadi sekitar satu gelas. Saring dan minum selagi hangat.\n\n" +
+                "Sumber (5 tahun terakhir):\n" +
+                "- Halodoc (2023): Menjelaskan manfaat daun kembang kertas untuk batuk, diabetes, dan tekanan darah tinggi.\n" +
+                "- Narayana, et al. (2022, *Journal of Pharmaceutical Negative Results*): Studi tentang aktivitas farmakologis Bougainvillea glabra, termasuk sifat antidiabetik.\n" +
+                "- Siahaan, et al. (2021, *Jurnal Farmasi dan Ilmu Kefarmasian Indonesia*): Penelitian mengenai aktivitas antibakteri ekstrak daun bugenvil terhadap bakteri penyebab infeksi kulit.\n" +
+                "- KlikDokter (2024): Membahas potensi daun bugenvil sebagai obat herbal untuk berbagai penyakit.",
+        image = R.drawable.daun_bugenvil_putih
+    ),
+    MyHerbData(
+        id = "5",
+        name = "Daun Cocor Bebek",
+        sasak_name = "Daun Cocor Bebek",
+        desc = "Daun dari tanaman Cocor Bebek (*Kalanchoe pinnata*), sejenis sukulen yang sangat unik karena dapat menumbuhkan tunas baru dari lekukan di pinggir daunnya. Daunnya tebal, berdaging, dan berair, dengan tepi bergerigi khas.\n\n" +
+                "Manfaat & Kandungan:\n" +
+                "- 🤕 **Anti-radang & Pereda Nyeri** – Efektif untuk mengobati sakit kepala, demam, nyeri otot, dan bisul. Daun yang ditumbuk sering digunakan sebagai kompres (tapal) untuk mengurangi peradangan dan nyeri.\n" +
+                "- 🩹 **Mempercepat Penyembuhan Luka** – Sifat antibakteri dan antiseptiknya membantu mencegah infeksi pada luka sayat, luka bakar ringan, dan memar. Cukup tempelkan daun yang sudah dilumatkan pada area yang terluka.\n" +
+                "- 🤒 **Menurunkan Demam** – Secara tradisional, daun cocor bebek yang ditumbuk halus ditempelkan di dahi sebagai kompres alami untuk membantu menurunkan suhu tubuh saat demam.\n" +
+                "- 🌿 **Kaya Senyawa Aktif** – Mengandung flavonoid, glikosida, alkaloid, dan saponin yang memberinya sifat anti-inflamasi, analgesik (pereda nyeri), dan antimikroba.\n\n" +
+                "Penggunaan:\n" +
+                "Paling umum digunakan secara eksternal (pemakaian luar). Cuci bersih beberapa lembar daun, lumatkan atau tumbuk hingga halus, lalu tempelkan sebagai kompres pada bagian tubuh yang sakit (dahi, luka, bisul, atau area memar).\n\n" +
+                "Sumber (5 tahun terakhir):\n" +
+                "- Siloam Hospitals (2024): Merangkum manfaat cocor bebek untuk demam, sakit kepala, dan peradangan.\n" +
+                "- Alodokter (2023): Menjelaskan kandungan dan khasiat daun cocor bebek sebagai obat herbal, terutama untuk luka dan peradangan.\n" +
+                "- Ferreira, R. T., et al. (2021, *Journal of Ethnopharmacology*): Studi ilmiah yang mengonfirmasi aktivitas anti-inflamasi dan penyembuhan luka dari ekstrak Kalanchoe pinnata.\n" +
+                "- Kementan RI (Badan Litbang Pertanian): Mengakui cocor bebek sebagai salah satu tanaman obat potensial di Indonesia.",
+        image = R.drawable.daun_cocor_bebek
+    ),
+    MyHerbData(
+        id = "6",
         name = "Daun Ginseng Jawa",
         sasak_name = "Daun Ginseng Jawa",
         desc = "Daun Ginseng Jawa (*Talinum paniculatum*) adalah tanaman obat dan sayuran berbentuk berkas daun hijau, kaya serat dan nutrisi (vitamin C, zat besi, kalsium, polifenol, flavonoid, saponin).\n\n" +
@@ -92,7 +130,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_ginseng_jawa
     ),
     MyHerbData(
-        id = "5",
+        id = "7",
         name = "Daun Jambu",
         sasak_name = "Daun Nyambuq",
         desc = "Daun jambu biji (*Psidium guajava*) adalah daun hijau memanjang, mengandung senyawa bioaktif seperti flavonoid (quercetin, kaempferol), asam fenolik, tanin, terpenoid, alkaloid dan saponin.\n\n" +
@@ -113,7 +151,7 @@ val myHerbData = listOf(
         image = R.drawable.jambu
     ),
     MyHerbData(
-        id = "6",
+        id = "8",
         name = "Daun Jarak",
         sasak_name = "Daun Jaraq",
         desc = "Daun jarak (*Jatropha curcas*) kaya akan senyawa bioaktif seperti flavonoid, tanin, phenolic acids dan terpenoid. .\n\n" +
@@ -130,7 +168,27 @@ val myHerbData = listOf(
         image = R.drawable.jarak
     ),
     MyHerbData(
-        id = "7",
+        id = "9",
+        name = "Daun Keji Beling",
+        sasak_name = "Daun Keji Beling",
+        desc = "Daun dari tanaman Keji Beling (*Strobilanthes crispus*), sebuah perdu yang berasal dari Madagaskar hingga Asia Tenggara. Namanya secara harfiah berarti 'batu pecah', merujuk pada khasiat utamanya. Daunnya berwarna hijau tua, berbentuk lonjong dengan tepi bergerigi dan permukaan yang agak kasar.\n\n" +
+                "Manfaat & Kandungan:\n" +
+                "- 💎 **Meluruhkan Batu Ginjal & Saluran Kemih** – Ini adalah manfaat paling terkenal. Sifat diuretiknya yang kuat dari kandungan kalium yang tinggi membantu meningkatkan produksi urine, mendorong keluar dan mencegah pembentukan batu ginjal serta batu kandung kemih.\n" +
+                "- 🩸 **Membantu Mengontrol Gula Darah** – Secara tradisional digunakan untuk penderita diabetes. Penelitian menunjukkan ekstrak daun ini dapat membantu menurunkan kadar glukosa darah berkat kandungan flavonoid dan senyawa aktif lainnya.\n" +
+                "- 🌿 **Tinggi Antioksidan & Anti-inflamasi** – Kaya akan flavonoid, katekin, dan alkaloid yang berfungsi sebagai antioksidan untuk melawan kerusakan sel. Sifat anti-inflamasinya juga membantu meredakan peradangan.\n" +
+                "- 🛡️ **Menjaga Kesehatan Pencernaan** – Dipercaya dapat mengatasi sembelit dan wasir karena memiliki efek laksatif atau pencahar ringan.\n\n" +
+                "Penggunaan:\n" +
+                "1. **Direbus**: Ambil 7-10 lembar daun keji beling segar, cuci bersih. Rebus dengan 2 gelas air hingga tersisa 1 gelas. Saring dan minum airnya sekali sehari.\n" +
+                "2. **Lalapan**: Daun mudanya bisa dikonsumsi langsung sebagai lalapan setelah dicuci bersih.\n\n" +
+                "Sumber (5 tahun terakhir):\n" +
+                "- Kemenkes RI (Direktorat Jenderal Yankes, 2023): Menjelaskan manfaat keji beling sebagai diuretik alami untuk batu ginjal dan diabetes.\n" +
+                "- Halodoc (2024): Merangkum khasiat keji beling untuk kesehatan ginjal, diabetes, dan sebagai antioksidan.\n" +
+                "- Widyawati, T., et al. (2022, *Molecules Journal*): Studi ilmiah yang mengulas potensi farmakologis *Strobilanthes crispus*, termasuk aktivitas antidiabetik dan antioksidannya.\n" +
+                "- Good Doctor (2023): Membahas cara pengolahan dan manfaat daun keji beling untuk pengobatan herbal.",
+        image = R.drawable.daun_keji_beling
+    ),
+    MyHerbData(
+        id = "10",
         name = "Daun Ketepeng Cina",
         sasak_name = "Daun Ketepeng",
         desc = "Daun ketepeng cina (*Senna siamea*) mengandung flavonoid (quercetin, kaempferol, cassiarin A), emodin, tanin dan asam fenolik.\n\n" +
@@ -147,7 +205,7 @@ val myHerbData = listOf(
         image = R.drawable.ketepengcina
     ),
     MyHerbData(
-        id = "8",
+        id = "11",
         name = "Daun Kumis Kucing",
         sasak_name = "Daun Kumis Kucing",
         desc = "Daun kumis kucing (*Orthosiphon aristatus*) mengandung rosmarinic acid, flavonoid, diterpenoid, triterpenoid dan saponin.\n\n" +
@@ -165,7 +223,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_kumis_kucing
     ),
     MyHerbData(
-        id = "9",
+        id = "12",
         name = "Daun Kumquat Nagami",
         sasak_name = "Daun Kumquat",
         desc = "Daun kumquat Nagami (*Citrus japonica*, syn. *Fortunella margarita*) mengandung essential oil kaya terpenes (elemol, germacrene-D/B, eudesmol, limonene) dan alkohol terpene (~76–99 %).\n\n" +
@@ -181,7 +239,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_kumquat_nagami
     ),
     MyHerbData(
-        id = "10",
+        id = "13",
         name = "Daun Meniran",
         sasak_name = "Daun Meniran",
         desc = "Daun meniran (*Phyllanthus niruri*) kaya antioksidan (polifenol, flavonoid, protein akt, securinine), bersifat hepatoprotektif, imunomodulator, dan diuretik.\n\n" +
@@ -198,7 +256,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_meniran
     ),
     MyHerbData(
-        id = "11",
+        id = "14",
         name = "Daun Mimba",
         sasak_name = "Daun Mimba",
         desc = "Daun mimba (*Azadirachta indica*, neem) mengandung >300 fitokimia seperti nimbolide, nimbidin, azadirachtin, quercetin, tanin, terpenoid, dengan aktivitas antimikroba, anti-inflamasi, antidiabetes, hepatoprotektif, dan insektisida alami.\n\n" +
@@ -215,7 +273,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_mimba
     ),
     MyHerbData(
-        id = "12",
+        id = "15",
         name = "Daun Nangka",
         sasak_name = "Daun Nangke",
         desc = "Daun nangka (*Artocarpus heterophyllus*) kaya polifenol, flavonoid, enzim-inhibitor, artocarpin, sitosterol, dan polisakarida fungsional yang bersifat antioksidan, anti-inflamasi, antimikroba, anti-obesitas, dan antikanker.\n\n" +
@@ -232,7 +290,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_nangka
     ),
     MyHerbData(
-        id = "13",
+        id = "16",
         name = "Daun Patah Tulang",
         sasak_name = "Daun Patah Tulang",
         desc = "Daun (ranting) patah tulang (*Euphorbia tirucalli*) mengandung flavonoid, tanin, saponin, steroid, dan latex aktif dengan aktivitas anti-inflamasi, penyembuhan luka, carminative, dan analgesik.\n\n" +
@@ -248,7 +306,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_patah_tulang
     ),
     MyHerbData(
-        id = "14",
+        id = "17",
         name = "Daun Pepaya",
         sasak_name = "Daun Gedang",
         desc = "Daun pepaya (*Carica papaya*) kaya akan enzim (papain, pseudokarpain), flavonoid, tanin, saponin, dan vitamin (A, C, E, B17), bersifat antioksidan, antimikroba, antelmintik, antikanker, serta diduga meningkatkan trombosit dan ASI.\n\n" +
@@ -269,7 +327,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_pepaya
     ),
     MyHerbData(
-        id = "15",
+        id = "18",
         name = "Daun Pukul Empat",
         sasak_name = "Daun Pukul Empat",
         desc = "Daun pukul empat (*Mirabilis jalapa*) mengandung alkaloid, flavonoid, saponin, triterpenoid dan tanin, dengan aktivitas antibakteri, antivirus, penyembuhan luka, dan sebagai hand sanitizer alami.\n\n" +
@@ -285,7 +343,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_pukul_empat
     ),
     MyHerbData(
-        id = "16",
+        id = "19",
         name = "Daun Sage",
         sasak_name = "Daun Sage",
         desc = "Daun sage merupakan herba aromatik yang mengandung senyawa aktif seperti asam rosmarinat, carnosol, dan cineol. Daun ini dikenal memiliki aktivitas antioksidan, anti-inflamasi, antimikroba, dan neuroprotektif.\n\n" +
@@ -301,7 +359,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_sage
     ),
     MyHerbData(
-        id = "17",
+        id = "20",
         name = "Daun Sembung",
         sasak_name = "Daun Sembung",
         desc = "Daun sembung mengandung senyawa aktif seperti borneol, cineol, flavonoid, dan seskuiterpen. Di Indonesia, tanaman ini telah lama digunakan dalam pengobatan tradisional untuk mengatasi masuk angin, gangguan pencernaan, dan luka luar.\n\n" +
@@ -317,7 +375,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_sembung
     ),
     MyHerbData(
-        id = "18",
+        id = "21",
         name = "Daun Sirih",
         sasak_name = "Daun Lekoq",
         desc = "Daun sirih kaya akan senyawa fenolik seperti eugenol, chavicol, dan hidroksikavikol yang memiliki sifat antimikroba, antiseptik, dan antioksidan kuat.\n\n" +
@@ -333,7 +391,7 @@ val myHerbData = listOf(
         image = R.drawable.sirih
     ),
     MyHerbData(
-        id = "19",
+        id = "22",
         name = "Daun Sirsak",
         sasak_name = "Daun Srikaye",
         desc = "Daun sirsak kaya akan senyawa annonaceous acetogenins, flavonoid, dan tanin. Secara tradisional digunakan untuk membantu melawan kanker, menurunkan gula darah, dan sebagai anti-inflamasi alami.\n\n" +
@@ -349,7 +407,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_sirsak
     ),
     MyHerbData(
-        id = "20",
+        id = "23",
         name = "Daun Tin Ara",
         sasak_name = "Daun Tin Ara",
         desc = "Daun tin mengandung flavonoid, asam fenolik, triterpenoid, dan berbagai enzim bioaktif. Dikenal dalam pengobatan Timur Tengah sebagai peluruh dahak, penurun tekanan darah, dan pembersih toksin.\n\n" +
@@ -365,7 +423,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_tin_ara
     ),
     MyHerbData(
-        id = "21",
+        id = "24",
         name = "Daun Ubi Jalar",
         sasak_name = "Daun Ambon",
         desc = "Daun ubi jalar mengandung antioksidan tinggi seperti antosianin, lutein, dan polifenol. Selain sebagai sumber makanan, daunnya memiliki berbagai efek farmakologis.\n\n" +
@@ -381,7 +439,7 @@ val myHerbData = listOf(
         image = R.drawable.daun_ubi_jalar
     ),
     MyHerbData(
-        id = "22",
+        id = "25",
         name = "Katumpangan",
         sasak_name = "Katumpangan",
         desc = "Katumpangan air, atau suruhan, dikenal sebagai tanaman kecil berair yang mengandung senyawa flavonoid, alkaloid, dan tanin. Di Indonesia, digunakan untuk peradangan dan nyeri sendi.\n\n" +

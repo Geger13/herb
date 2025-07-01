@@ -105,7 +105,7 @@ fun HerbListContent(
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = modifier) {
-        items(herbList, key = { it.id }) { herb ->
+        items(herbList.take(5), key = { it.id }) { herb ->
             MenuCard(
                 modifier = Modifier.clickable {
                     navController.navigate(Screen.Informasi.createRoute(herb.id))
